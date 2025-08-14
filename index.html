@@ -48,10 +48,16 @@
       --bg: #f9fafb;
       --text: #1f2937;
     }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    * { 
+      margin: 0; 
+      padding: 0; 
+      box-sizing: border-box; 
+    }
+    html { 
+      scroll-behavior: smooth; 
+    }
     body {
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       line-height: 1.6;
       background: var(--bg);
       color: var(--text);
@@ -67,20 +73,32 @@
       top: 0;
       z-index: 1000;
     }
-    header img { height: 40px; }
+    header img { 
+      height: 40px;
+      max-width: 100%; 
+    }
     nav ul {
       list-style: none;
       display: flex;
-      gap: 1rem;
+      gap: 1.5rem;
     }
     nav ul li a {
       color: white;
       text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+      white-space: nowrap;
+    }
+    nav ul li a:hover {
+      color: var(--accent);
     }
     .menu-toggle {
       display: none;
-      font-size: 24px;
+      font-size: 1.5rem;
       cursor: pointer;
+      background: none;
+      border: none;
+      color: white;
     }
     .mobile-nav {
       display: none;
@@ -88,64 +106,217 @@
       background: var(--primary);
       position: absolute;
       top: 70px;
-      right: 0;
+      left: 0;
       width: 100%;
       padding: 1rem;
+      gap: 1rem;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.2);
     }
-    .mobile-nav.open { display: flex; }
-    main { padding: 2rem; }
-    section { margin-bottom: 3rem; }
+    .mobile-nav.open { 
+      display: flex; 
+    }
+    .mobile-nav a {
+      color: white;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      transition: background 0.3s;
+    }
+    .mobile-nav a:hover {
+      background: rgba(255,255,255,0.1);
+    }
+    main { 
+      padding: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    section { 
+      margin-bottom: 3rem;
+    }
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.3;
+    }
+    h2 {
+      font-size: 1.75rem;
+      margin-bottom: 1.25rem;
+      color: var(--primary);
+    }
+    h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    p, li {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 1rem 0;
+      border-radius: 8px;
+    }
     table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 1rem;
+      margin: 1.5rem 0;
       background: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      overflow-x: auto;
+      display: block;
     }
     th, td {
-      border: 1px solid #ddd;
+      border: 1px solid #e2e8f0;
       padding: 1rem;
       text-align: left;
     }
     th {
       background: var(--accent);
       color: white;
+      font-weight: 600;
+    }
+    tr:nth-child(even) {
+      background: #f8fafc;
     }
     .pros, .cons {
       background: #e0f7fa;
-      padding: 1rem 2rem;
-      margin: 1rem 0;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
       border-left: 5px solid var(--accent);
+      border-radius: 0 8px 8px 0;
     }
-    .accordion { margin-top: 1rem; }
-    .accordion-item { border-bottom: 1px solid #ccc; }
+    .pros ul, .cons ul {
+      padding-left: 1.5rem;
+    }
+    .pros li, .cons li {
+      margin-bottom: 0.5rem;
+      position: relative;
+    }
+    .pros li::before {
+      content: "✓";
+      color: #10b981;
+      margin-right: 0.5rem;
+    }
+    .cons li::before {
+      content: "✗";
+      color: #ef4444;
+      margin-right: 0.5rem;
+    }
+    .accordion { 
+      margin: 1.5rem 0;
+    }
+    .accordion-item { 
+      border-bottom: 1px solid #e2e8f0;
+    }
     .accordion-title {
       cursor: pointer;
-      padding: 1rem;
+      padding: 1.25rem;
       background: #fff;
-      font-weight: bold;
+      font-weight: 600;
       display: flex;
       justify-content: space-between;
+      align-items: center;
+      transition: background 0.3s;
+    }
+    .accordion-title:hover {
+      background: #f8fafc;
+    }
+    .accordion-title span {
+      font-size: 1.25rem;
     }
     .accordion-content {
       display: none;
-      padding: 1rem;
-      background: #f1f5f9;
+      padding: 1rem 1.25rem;
+      background: #f8fafc;
+      border-top: 1px solid #e2e8f0;
     }
     footer {
       background: var(--primary);
       color: white;
       text-align: center;
       padding: 2rem 1rem;
+      margin-top: 2rem;
     }
+    footer p {
+      margin-bottom: 0;
+    }
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    a:hover {
+      color: #5b21b6;
+      text-decoration: underline;
+    }
+
+    /* Responsive Breakpoints */
+    @media (max-width: 1024px) {
+      main {
+        padding: 1.5rem;
+      }
+    }
+
     @media (max-width: 768px) {
-      nav ul { display: none; }
-      .menu-toggle { display: block; }
+      header {
+        padding: 1rem;
+      }
+      nav ul { 
+        display: none; 
+      }
+      .menu-toggle { 
+        display: block; 
+      }
+      h1 {
+        font-size: 1.75rem;
+      }
+      h2 {
+        font-size: 1.5rem;
+      }
+      .pros, .cons {
+        padding: 1.25rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      main {
+        padding: 1rem;
+      }
+      th, td {
+        padding: 0.75rem;
+        font-size: 0.9rem;
+      }
+      .accordion-title {
+        padding: 1rem;
+        font-size: 1rem;
+      }
+    }
+
+    /* Print Styles */
+    @media print {
+      header, footer, .menu-toggle {
+        display: none;
+      }
+      body {
+        background: white;
+        color: black;
+        font-size: 12pt;
+      }
+      a {
+        color: blue;
+        text-decoration: underline;
+      }
+      .accordion-content {
+        display: block !important;
+      }
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="logo-placeholder.webp" alt="Anime World Logo">
+    <img src="logo-placeholder.webp" alt="Anime World Logo" loading="lazy">
     <nav>
       <ul>
         <li><a href="#introduction">Intro</a></li>
@@ -153,7 +324,7 @@
         <li><a href="#faq">FAQs</a></li>
       </ul>
     </nav>
-    <span class="menu-toggle" id="menu-icon">☰</span>
+    <button class="menu-toggle" id="menu-icon" aria-label="Toggle menu">☰</button>
   </header>
 
   <div class="mobile-nav" id="mobile-menu">
@@ -165,48 +336,50 @@
   <main>
     <section id="introduction">
       <h1>Anime World Website India - Best Alternatives to Crunchyroll 2025</h1>
-      <img src="banner-image.jpg" alt="Watch Anime Without Ads">
-      <p>Anime fans love to binge their favorite series. But nothing ruins the moment more than sudden ads. If you're tired of pop-ups and ad interruptions, you’re not alone. In this guide, we'll explore the top ad-free alternatives to Crunchyroll for 2025. You can also <a href="https://www.animeworldapk.info" target="_blank" rel="noopener"><strong>visit the Anime World website</strong></a> to stream your favorite anime without interruptions.</p>
+      <img src="banner-image.jpg" alt="Watch Anime Without Ads" loading="lazy">
+      <p>Anime fans love to binge their favorite series. But nothing ruins the moment more than sudden ads. If you're tired of pop-ups and ad interruptions, you're not alone. In this guide, we'll explore the top ad-free alternatives to Crunchyroll for 2025. You can also Download the <a href="https://www.animeworldapk.info" target="_blank" rel="noopener noreferrer"><strong>Anime World APK</strong></a> to stream your favorite anime without interruptions.</p>
     </section>
 
     <section id="alternatives">
       <h2>Top 5 Ad-Free Alternatives to Crunchyroll</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Platform</th>
-            <th>Key Features</th>
-            <th>Pricing</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Netflix</td>
-            <td>High-quality dubs & subs, original anime, no ads</td>
-            <td>Paid</td>
-          </tr>
-          <tr>
-            <td>Funimation</td>
-            <td>Dubbed anime focus, no ads with premium</td>
-            <td>Free & Paid</td>
-          </tr>
-          <tr>
-            <td>HiDive</td>
-            <td>Exclusive titles, no ads, retro anime</td>
-            <td>Paid</td>
-          </tr>
-          <tr>
-            <td>AnimeLab</td>
-            <td>Best for Australian users, clean interface</td>
-            <td>Free & Paid</td>
-          </tr>
-          <tr>
-            <td>Bilibili</td>
-            <td>Popular in Asia, free, minimal ads</td>
-            <td>Mostly Free</td>
-          </tr>
-        </tbody>
-      </table>
+      <div style="overflow-x: auto;">
+        <table>
+          <thead>
+            <tr>
+              <th>Platform</th>
+              <th>Key Features</th>
+              <th>Pricing</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Netflix</td>
+              <td>High-quality dubs & subs, original anime, no ads</td>
+              <td>Paid</td>
+            </tr>
+            <tr>
+              <td>Funimation</td>
+              <td>Dubbed anime focus, no ads with premium</td>
+              <td>Free & Paid</td>
+            </tr>
+            <tr>
+              <td>HiDive</td>
+              <td>Exclusive titles, no ads, retro anime</td>
+              <td>Paid</td>
+            </tr>
+            <tr>
+              <td>AnimeLab</td>
+              <td>Best for Australian users, clean interface</td>
+              <td>Free & Paid</td>
+            </tr>
+            <tr>
+              <td>Bilibili</td>
+              <td>Popular in Asia, free, minimal ads</td>
+              <td>Mostly Free</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </section>
 
     <section class="pros">
@@ -215,6 +388,8 @@
         <li>No annoying pop-ups or mid-episode interruptions</li>
         <li>Better streaming quality</li>
         <li>Family and kid-friendly viewing</li>
+        <li>Faster loading times without ad scripts</li>
+        <li>More professional viewing experience</li>
       </ul>
     </section>
 
@@ -224,6 +399,8 @@
         <li>Most ad-free options are not 100% free</li>
         <li>Limited content in regional languages (e.g., Hindi)</li>
         <li>Requires subscription or login in most cases</li>
+        <li>May have geo-restrictions on some content</li>
+        <li>Higher bandwidth consumption for HD content</li>
       </ul>
     </section>
 
@@ -232,11 +409,21 @@
       <div class="accordion">
         <div class="accordion-item">
           <div class="accordion-title">Which anime site has no ads? <span>+</span></div>
-          <div class="accordion-content">Netflix, Funimation, and HiDive are top ad-free platforms for anime in 2025.</div>
+          <div class="accordion-content">
+            <p>Netflix, Funimation, and HiDive are top ad-free platforms for anime in 2025. These services offer premium subscriptions that remove all advertisements. Some free platforms like Bilibili have minimal ads compared to others.</p>
+          </div>
         </div>
         <div class="accordion-item">
           <div class="accordion-title">Is Crunchyroll ad-free? <span>+</span></div>
-          <div class="accordion-content">Only if you purchase their premium plan.</div>
+          <div class="accordion-content">
+            <p>Crunchyroll only becomes ad-free if you purchase their premium plan. The free version includes advertisements before and during episodes. The premium subscription also unlocks HD streaming and simulcast episodes.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-title">Are there any legal free anime sites without ads? <span>+</span></div>
+          <div class="accordion-content">
+            <p>Truly ad-free legal anime sites typically require payment. However, some platforms like Bilibili and YouTube's official anime channels offer content with minimal ads. Many regional platforms also provide anime with fewer ads than international services.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -247,24 +434,55 @@
   </footer>
 
   <script>
-    const menuIcon = document.getElementById('menu-icon');
-    const mobileMenu = document.getElementById('mobile-menu');
-    menuIcon.addEventListener('click', () => {
-      mobileMenu.classList.toggle('open');
-      menuIcon.textContent = mobileMenu.classList.contains('open') ? '✖' : '☰';
-    });
-
-    const titles = document.querySelectorAll('.accordion-title');
-    titles.forEach(title => {
-      title.addEventListener('click', () => {
-        const content = title.nextElementSibling;
-        const isOpen = content.style.display === 'block';
-        content.style.display = isOpen ? 'none' : 'block';
-        const symbol = title.querySelector('span');
-        if (symbol) symbol.textContent = isOpen ? '+' : '-';
+    document.addEventListener('DOMContentLoaded', function() {
+      // Mobile menu toggle
+      const menuIcon = document.getElementById('menu-icon');
+      const mobileMenu = document.getElementById('mobile-menu');
+      
+      menuIcon.addEventListener('click', () => {
+        const isOpen = mobileMenu.classList.toggle('open');
+        menuIcon.textContent = isOpen ? '✖' : '☰';
+        menuIcon.setAttribute('aria-expanded', isOpen);
       });
+
+      // Close mobile menu when clicking a link
+      const mobileLinks = mobileMenu.querySelectorAll('a');
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.remove('open');
+          menuIcon.textContent = '☰';
+          menuIcon.setAttribute('aria-expanded', 'false');
+        });
+      });
+
+      // Accordion functionality
+      const accordionTitles = document.querySelectorAll('.accordion-title');
+      accordionTitles.forEach(title => {
+        title.addEventListener('click', () => {
+          const content = title.nextElementSibling;
+          const isOpen = content.style.display === 'block';
+          
+          // Close all other accordion items
+          document.querySelectorAll('.accordion-content').forEach(item => {
+            item.style.display = 'none';
+          });
+          document.querySelectorAll('.accordion-title span').forEach(span => {
+            span.textContent = '+';
+          });
+          
+          // Toggle current item
+          if (!isOpen) {
+            content.style.display = 'block';
+            title.querySelector('span').textContent = '-';
+          }
+        });
+      });
+
+      // Initially open first accordion item
+      if (accordionTitles.length > 0) {
+        accordionTitles[0].click();
+      }
     });
   </script>
 </body>
 </html>
-
