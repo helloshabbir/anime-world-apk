@@ -8,7 +8,7 @@
   <meta name="robots" content="index, follow">
   <meta name="googlebot" content="index, follow">
   <meta name="bingbot" content="index, follow">
-  <link rel="icon" type="image/webp" href="favicon.png">
+  <link rel="icon" type="image/png" href="favicon.png">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Anime World Website India - Best Alternatives to Crunchyroll 2025">
@@ -56,6 +56,7 @@
       background: var(--bg);
       color: var(--text);
     }
+    img { max-width: 100%; height: auto; }
     header {
       background: var(--primary);
       color: white;
@@ -137,9 +138,31 @@
       text-align: center;
       padding: 2rem 1rem;
     }
+    /* Responsive Styles */
     @media (max-width: 768px) {
       nav ul { display: none; }
       .menu-toggle { display: block; }
+      table, thead, tbody, th, td, tr {
+        display: block;
+        width: 100%;
+      }
+      thead tr {
+        display: none;
+      }
+      tr { margin-bottom: 1rem; }
+      td {
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+      }
+      td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 1rem;
+        width: 45%;
+        text-align: left;
+        font-weight: bold;
+      }
     }
   </style>
 </head>
@@ -166,7 +189,7 @@
     <section id="introduction">
       <h1>Anime World Website India - Best Alternatives to Crunchyroll 2025</h1>
       <img src="banner-image.jpg" alt="Watch Anime Without Ads">
-      <p>Anime fans love to binge their favorite series. But nothing ruins the moment more than sudden ads. If you're tired of pop-ups and ad interruptions, you’re not alone. In this guide, we'll explore the top ad-free alternatives to Crunchyroll for 2025. You can also Download the <a href="https://www.animeworldapk.info" target="_blank" rel="noopener"><strong>Anime World APK</strong></a> to stream your favorite anime without interruptions.</p>
+      <p>Anime fans love to binge their favorite series. But nothing ruins the moment more than sudden ads. If you're tired of pop-ups and ad interruptions, you’re not alone. In this guide, we'll explore the top ad-free alternatives to Crunchyroll for 2025. You can also <a href="https://www.animeworldapk.info" target="_blank" rel="noopener"><strong>visit the Anime World website</strong></a> to stream your favorite anime without interruptions.</p>
     </section>
 
     <section id="alternatives">
@@ -181,29 +204,29 @@
         </thead>
         <tbody>
           <tr>
-            <td>Netflix</td>
-            <td>High-quality dubs & subs, original anime, no ads</td>
-            <td>Paid</td>
+            <td data-label="Platform">Netflix</td>
+            <td data-label="Key Features">High-quality dubs & subs, original anime, no ads</td>
+            <td data-label="Pricing">Paid</td>
           </tr>
           <tr>
-            <td>Funimation</td>
-            <td>Dubbed anime focus, no ads with premium</td>
-            <td>Free & Paid</td>
+            <td data-label="Platform">Funimation</td>
+            <td data-label="Key Features">Dubbed anime focus, no ads with premium</td>
+            <td data-label="Pricing">Free & Paid</td>
           </tr>
           <tr>
-            <td>HiDive</td>
-            <td>Exclusive titles, no ads, retro anime</td>
-            <td>Paid</td>
+            <td data-label="Platform">HiDive</td>
+            <td data-label="Key Features">Exclusive titles, no ads, retro anime</td>
+            <td data-label="Pricing">Paid</td>
           </tr>
           <tr>
-            <td>AnimeLab</td>
-            <td>Best for Australian users, clean interface</td>
-            <td>Free & Paid</td>
+            <td data-label="Platform">AnimeLab</td>
+            <td data-label="Key Features">Best for Australian users, clean interface</td>
+            <td data-label="Pricing">Free & Paid</td>
           </tr>
           <tr>
-            <td>Bilibili</td>
-            <td>Popular in Asia, free, minimal ads</td>
-            <td>Mostly Free</td>
+            <td data-label="Platform">Bilibili</td>
+            <td data-label="Key Features">Popular in Asia, free, minimal ads</td>
+            <td data-label="Pricing">Mostly Free</td>
           </tr>
         </tbody>
       </table>
@@ -267,4 +290,3 @@
   </script>
 </body>
 </html>
-
